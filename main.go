@@ -96,7 +96,6 @@ func parseVars(file string) (map[string]interface{}, error) {
 	}
 
 	pv := make(map[string]interface{})
-
 	err = yaml.Unmarshal(v, &pv)
 	if err == nil {
 		glog.Info("Yaml detected")
@@ -104,6 +103,7 @@ func parseVars(file string) (map[string]interface{}, error) {
 	}
 	glog.Infof("YAML err: %v", err)
 
+	pv = make(map[string]interface{})
 	err = json.Unmarshal(v, &pv)
 	if err == nil {
 		// yaml should cover JSON but in case...
@@ -112,6 +112,7 @@ func parseVars(file string) (map[string]interface{}, error) {
 	}
 	glog.Infof("JSON err: %v", err)
 
+	pv = make(map[string]interface{})
 	o, err1 := hcl.Parse(string(v))
 	var err2 error
 	if err1 == nil {
@@ -123,6 +124,7 @@ func parseVars(file string) (map[string]interface{}, error) {
 	}
 	glog.Infof("HCL errs: %v, %v", err1, err2)
 
+	pv = make(map[string]interface{})
 	t, err := toml.LoadReader(bytes.NewBuffer(v))
 	if err == nil {
 		tm := t.ToMap()
