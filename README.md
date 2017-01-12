@@ -1,6 +1,6 @@
 # gotmpl
 --
-gotmpl is simple a command line tool that will substitute the variables from a
+gotmpl is a simple command line tool that will substitute the variables from a
 data file into a Go text template file.
 
 Get it:
