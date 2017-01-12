@@ -11,6 +11,8 @@
 //
 //     gotmpl -logtostderr -d dat.yml cfg.txt.tmpl > cfg.txt
 //
+//     cat cfg.tmpl | gotmpl -d vars.json > cfg.txt
+//
 //     gotmpl -h
 //
 //
@@ -78,8 +80,8 @@ func main() {
 	}
 }
 
-// parseVars tries to parse the input and returnes the first result
-// that parses successfully in this order: YAML, JSON, HCL & TOML
+// parseVars tries to parse the input and returns the result of the
+// first successful parse in this order: YAML, JSON, HCL & TOML
 func parseVars(file string) (map[string]interface{}, error) {
 
 	// adaptive variant of parse code in github.com/spf13/viper (MIT)
