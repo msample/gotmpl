@@ -15,6 +15,8 @@ Use it:
 
     gotmpl -logtostderr -d dat.yml cfg.txt.tmpl > cfg.txt
 
+    cat cfg.tmpl | gotmpl -d vars.json > cfg.txt
+
     gotmpl -h
 
 Data file may contain YAML, JSON, HCL or TOML. Gotmpl tries the parsers in that
