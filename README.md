@@ -11,11 +11,13 @@ Use it:
 
     gotmpl -d dat.yml cfg.txt.tmpl > cfg.txt
 
+    cat dat.yml | gotmpl cfg.txt.tmpl > cfg.txt
+
+    cat cfg.txt.tmpl | gotmpl -d data.json > cfg.txt
+
     gotmpl -d dat.yml cfg.txt.tmpl cfg.txt.tmpl2 > cfg.txt
 
     gotmpl -logtostderr -d dat.yml cfg.txt.tmpl > cfg.txt
-
-    cat cfg.tmpl | gotmpl -d vars.json > cfg.txt
 
     gotmpl -h
 
